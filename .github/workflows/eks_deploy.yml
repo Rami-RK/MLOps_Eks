@@ -36,7 +36,7 @@ jobs:
     - name: Create EKS cluster
       run: |
         eksctl create cluster \
-          --name=ramen_cluster \
+          --name=r1cluster \
           --region=ap-south-1 \
           --version=1.30 \
           --nodegroup-name=myNodegrp \
@@ -50,7 +50,7 @@ jobs:
     # Update kubeconfig for your EKS cluster
     - name: Update kubeconfig
       run: |
-        aws eks update-kubeconfig --name ramen_cluster --region ap-south-1
+        aws eks update-kubeconfig --name r1cluster --region ap-south-1
 
     # Deploy to EKS using kubectl
     - name: Deploy to EKS
