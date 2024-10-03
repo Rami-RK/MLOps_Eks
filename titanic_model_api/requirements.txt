@@ -1,0 +1,17 @@
+uvicorn==0.17.6
+fastapi==0.99.1
+pydantic==1.10.10
+requests==2.23.0
+jinja2
+python-multipart
+# repo maintenance tooling
+#black==23.3.0
+#flake8>=3.9.0,<3.10.0
+#mypy==0.812
+#isort==5.8.0
+
+# After uploading your package in PyPi use the given below
+#titanic-model==0.0.1
+
+# If locally copied whl file inside titanic_model-api then use given below
+titanic_model-0.0.1-py3-none-any.whl

@@ -1,0 +1,26 @@
+1. folder structure  for : 
+No need to provide any path if provided with setup.py, setup.cfg, 
+pyproject.toml with proper configuration. 
+The  'titanic_model' folder and all other folder inside it will 
+behave like package and we can directly import class and fucntion from them.
+
+project_trial 
+        |-requirements
+        |-titanic_model ----------| [config,datasets, processing, trained_models]
+        |-venv
+        |-pyproject.toml
+        |-setup.cfg
+        |-setup.py
+
+* Be insdie project_trial and run : pip install -e .
+
+2. Be inside requirements folder : Install all test_requirements
+3. Be inside titanic_model & run: python  train_pipeline.py
+4. Be inside project_trial and run: pytest
+5. Be inside project_trial & package: python -m build
+6. Move wheel file from  dist folder to titanic_model_api
+7. Run the docker : docker build . -t ramen/titanic
+7.1 : docker images
+7.2 : docker run -it -d -p 8001:8001 --name=myapp ramen/titanic
+7.3 : docker ps
+7.4 : docker logs -f myapp
