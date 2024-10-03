@@ -30,18 +30,18 @@ jobs:
         sudo mv ./kubectl /usr/local/bin/kubectl
    
     - name: Create EKS cluster
-        run: |
-          eksctl create cluster \
-            --name=ramen_cluster \
-            --region=ap-south-1 \
-            --version=1.30 \
-            --nodegroup-name=myNodegrp \
-            --node-type=t2.micro \
-            --node-ami-family=AmazonLinux2023 \
-            --nodes=2 \
-            --nodes-min=1 \
-            --nodes-max=3 \
-            --managed
+      run: |
+        eksctl create cluster \
+          --name=ramen_cluster \
+          --region=ap-south-1 \
+          --version=1.30 \
+          --nodegroup-name=myNodegrp \
+          --node-type=t2.micro \
+          --node-ami-family=AmazonLinux2023 \
+          --nodes=2 \
+          --nodes-min=1 \
+          --nodes-max=3 \
+          --managed
 
     # Update kubeconfig for your EKS cluster
     - name: Update kubeconfig
