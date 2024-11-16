@@ -36,13 +36,13 @@ jobs:
     - name: Create EKS cluster
       run: |
         eksctl create cluster \
-          --name=r3cluster \
+          --name=r4cluster \
           --region=ap-south-1 \
           --version=1.30 \
           --nodegroup-name=myNodegrp \
           --node-type=t2.micro \
           --node-ami-family=AmazonLinux2023 \
-          --nodes=2 \
+          --nodes=3 \
           --nodes-min=1 \
           --nodes-max=3 \
           --managed
@@ -50,7 +50,7 @@ jobs:
     # Update kubeconfig for your EKS cluster
     - name: Update kubeconfig
       run: |
-        aws eks update-kubeconfig --name r3cluster --region ap-south-1
+        aws eks update-kubeconfig --name r4cluster --region ap-south-1
 
     # Deploy to EKS using kubectl
     - name: Deploy to EKS
